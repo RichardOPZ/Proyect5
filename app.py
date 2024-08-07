@@ -7,7 +7,9 @@ st.header('Datos de Autos')
 hist_button = st.button('construir histograma')  # crear un botón
 # Crea un botón para construir un gráfico de dispersion
 scatter_button = st.button('construir dispersion')
-if hist_button:  # al hacer clic en el botón
+build_histogram = st.checkbox('Construir un histograma')
+build_scatter = st.checkbox('Construir un grafico de dispersion')
+if hist_button or build_histogram:  # al hacer clic en el botón
     # escribir un mensaje
     st.write(
         'Creación de un histograma para el conjunto de datos de anuncios de venta de coches')
@@ -18,7 +20,7 @@ if hist_button:  # al hacer clic en el botón
     # mostrar un gráfico Plotly interactivo
     st.plotly_chart(fig, use_container_width=True)
 
-if scatter_button:  # al hacer clic en el botón
+if scatter_button or build_scatter:  # al hacer clic en el botón
     # escribir un mensaje
     st.write('Creación de un grafico de dispersion para el conjunto de datos de anuncios de venta de coches')
 
